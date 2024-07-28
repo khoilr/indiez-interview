@@ -1,0 +1,13 @@
+services:
+    part_1:
+        build: ./part_1
+        volumes:
+            - ./part_1:/app
+
+    part_2:
+        build: ./part_2
+        depends_on:
+            part_1:
+                condition: service_completed_successfully
+        volumes:
+            - ./part_2:/app
