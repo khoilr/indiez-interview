@@ -71,9 +71,9 @@ Sample filled
 ======== Part 1 Done ========
 ```
 
-## Part 2 - Data Processing
+### Part 2 - Data Processing
 
-### A. SQL
+#### A. SQL
 
 The SQL source code is in the file `part_2_a.sql`, and assume the table name is `tree` with filled data as
 
@@ -95,7 +95,7 @@ The SQL source code is in the file `part_2_a.sql`, and assume the table name is 
 | 14  | 12        |
 | 15  | 2         |
 
-#### Define node type
+##### Define node type
 
 ```sql
 -- A
@@ -135,7 +135,7 @@ from
 | 14  | 12        | leaf      |
 | 15  | 2         | leaf      |
 
-#### List all descendants of a node
+##### List all descendants of a node
 
 Breath First Search
 
@@ -233,7 +233,7 @@ The result will be
 | 13  | 4     | 5->6->12->13 |
 | 14  | 4     | 5->6->12->14 |
 
-### B. Data Processing using PySpark
+#### B. Data Processing using PySpark
 
 1. Navigate to the `part_2` directory
 2. Install the required packages by running the following command: `pip install -r requirements.txt`. This will install the `pyspark` package which is used to process the data.
@@ -319,3 +319,15 @@ Project IDs sorted by number of transactions descending:
 
 ======== Part 2 Done ========
 ```
+
+## Run with Docker
+
+> Only part 1 and 2-b are included in the docker-compose file, the part 2-a is sql file which is excluded.
+
+### Prerequisites
+
+- Docker (<https://docs.docker.com/get-docker/>)
+
+### Instruction
+
+Run `docker compose up` to start, the result of part 1 and 2 will be logged to the console respectively. The result of part 1 will be saved to a csv file named `part_1.csv` in `part_1` directory, and the result of part 2 will be saved to a parquet file in the `output` directory under `part_2` directory.
